@@ -1,0 +1,34 @@
+{
+  "name": "nivel-rio",
+  "version": "1.0.0",
+  "description": "npm cli for getting the lastest information about Itajaí-Açú River, in Blumenau.",
+  "main": "nivel-rio-cli.js",
+  "dependencies": {
+    "meow": "^3.7.0"
+  },
+  "bin": {
+    "nivel-rio": "nivel-rio-cli.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "github.com/jean-lourenco/nivel-rio",
+  "keywords": [
+    "cli",
+    "cli-app",
+    "itajai",
+    "ceops",
+    "blumenau"
+  ],
+  "author": {
+    "name": "Jean Lourenço",
+    "email": "jeancarlos.bnu@gmail.com",
+    "url": "jeanlourenco.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jean-lourenco/nivel-rio/issues"
+  },
+  "homepage": "https://github.com/jean-lourenco/nivel-rio#readme"
+}
