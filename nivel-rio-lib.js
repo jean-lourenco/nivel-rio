@@ -1,6 +1,7 @@
 'use strict';
 
 let http = require('http');
+let moment = require('moment');
 
 const ceopsBlumenau = 'http://ceops.furb.br/restrito/SisCeops/controllers/controller_pg.php?action=tabela_dados&&cd_estacao=7331';
 
@@ -47,7 +48,7 @@ function getLastestRiverLevel() {
                     const lastest = riverLevels[0];
 
                     return {
-                        date: lastest.date,
+                        date: moment(lastest.date, 'DD/MM/YYYY HH:mm'),
                         level: lastest.level
                     }
                 });

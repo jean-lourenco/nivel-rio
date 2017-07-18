@@ -11,4 +11,4 @@ const cli = meow(`
 
 nivelRioLib
     .getLastestRiverLevel()
-    .then((x) => console.log(`${x.date} - ${x.level} meters`));
+    .then((x) => console.log(`${x.date.format("YYYY-MM-DD HH:mm")} - ${x.level} meters`));
