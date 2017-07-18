@@ -1,5 +1,5 @@
 # nivel-rio
-[npm](https://www.npmjs.com/package/nivel-rio) cli for getting the lastest information about Itajaí-Açú River, in Blumenau.
+[npm](https://www.npmjs.com/package/nivel-rio) command-line for getting the lastest information about Itajaí-Açú River, in Blumenau.
 
 ```shell
   $ npm install nivel-rio -g
