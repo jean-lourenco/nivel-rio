@@ -8,7 +8,7 @@ const ceopsBlumenau = 'http://ceops.furb.br/restrito/SisCeops/controllers/contro
 function RiverLevel(ceopsDto) {
     this.station = ceopsDto.cd_estacao;
     this.city = ceopsDto.ds_cidade;
-    this.date = ceopsDto.data;
+    this.date = moment(ceopsDto.data, 'DD/MM/YYYY HH:mm');
     this.level = ceopsDto.vlr_nivel;
     this.precipitation = ceopsDto.precipitacao;
 }
@@ -42,17 +42,4 @@ function getAllRiverLevelInfo() {
     });
 }
 
-function getLastestRiverLevel() {
-    return  getAllRiverLevelInfo()
-                .then((riverLevels) => {
-                    const lastest = riverLevels[0];
-
-                    return {
-                        date: moment(lastest.date, 'DD/MM/YYYY HH:mm'),
-                        level: lastest.level
-                    }
-                });
-}
-
 exports.getAllRiverLevelInfo = getAllRiverLevelInfo;
-exports.getLastestRiverLevel = getLastestRiverLevel;
