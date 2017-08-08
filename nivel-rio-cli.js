@@ -2,8 +2,8 @@
 'use strict';
 
 const meow = require('meow');
-const nivelRioLib = require('./nivel-rio-lib');
 const chalk = require('chalk');
+const nivelRio = require('nivel-rio-lib');
 
 const cli = meow(`
     Utilização
@@ -34,11 +34,11 @@ const cli = meow(`
 const flags = cli.flags;
 
 if (flags['recente']) {
-    nivelRioLib
+    nivelRio
         .getAllRiverLevelInfo()
         .then((x) => showMeasurementPerHour(x, 10));    
 } else {
-    nivelRioLib
+    nivelRio
         .getAllRiverLevelInfo()
         .then((x) => showMeasurementPerHour(x, 1));
 }
