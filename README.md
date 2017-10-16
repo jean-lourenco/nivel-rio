@@ -1,16 +1,16 @@
 # nivel-rio
-[npm](https://www.npmjs.com/package/nivel-rio) command-line for getting the lastest information about Itajaí-Açú River, in Blumenau.
+[npm](https://www.npmjs.com/package/nivel-rio) cli para obter informações sobre o nível do Rio Itajaí Açú, em Blumenau
 
 ```shell
   $ npm install nivel-rio -g
 ```
 
-# Usage
+# Utilização
 ```shell
   $ nivel-rio
   
-  17/07/2017 20:00 - 0.90 meters
+  17/07/2017 20:00 - 0.90 metros
 ```
 
-# Where do the data comes from?
-[CEOPS](http://ceops.furb.br/) and [FURB](http://www.furb.br)
+# De onde vem os dados?
+[CEOPS](http://ceops.furb.br/) e [FURB](http://www.furb.br)
