@@ -7,7 +7,7 @@ const nivelRio = require('nivel-rio-lib');
 
 const cli = meow(`
     Utilização
-        $ nivel-rio    
+        $ nivel-rio
 
     Opções
         --recente, -r    lista as 10 medições mais recentes por hora
@@ -36,7 +36,7 @@ const flags = cli.flags;
 if (flags['recente']) {
     nivelRio
         .getAllRiverLevelInfo()
-        .then((x) => showMeasurementPerHour(x, 10));    
+        .then((x) => showMeasurementPerHour(x, 10));
 } else {
     nivelRio
         .getAllRiverLevelInfo()

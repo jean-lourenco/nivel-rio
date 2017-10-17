@@ -1,6 +1,6 @@
 {
   "name": "nivel-rio",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "npm command-line for getting the lastest information about Itajaí-Açú River, in Blumenau.",
   "main": "nivel-rio-cli.js",
   "dependencies": {
