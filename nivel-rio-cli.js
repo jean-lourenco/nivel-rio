@@ -2,8 +2,9 @@
 'use strict';
 
 const meow = require('meow');
-const chalk = require('chalk');
 const nivelRio = require('nivel-rio-lib');
+const main = require('./main.js');
+const Spinner = require('cli-spinner').Spinner;
 
 const cli = meow(`
     Utilização
@@ -32,32 +33,29 @@ const cli = meow(`
 });
 
 const flags = cli.flags;
+const spinner = startNewLoading();
 
 if (flags['recente']) {
     nivelRio
         .getAllRiverLevelInfo()
-        .then((x) => showMeasurementPerHour(x, 10));
+        .then((x) => {
+            spinner.stop(true);
+            main.showMeasurementPerHour(x, 10);
+        });
 } else {
     nivelRio
         .getAllRiverLevelInfo()
-        .then((x) => showMeasurementPerHour(x, 1));
+        .then((x) => {
+            spinner.stop(true);
+            main.showMeasurementPerHour(x, 1);
+        });
 }
 
-function getLevelDifference(originalLevel, actualLevel) {
-    var difference = (actualLevel - originalLevel).toFixed(2);
+function startNewLoading() {
+    const spinner = new Spinner("Carregando...");
 
-    return difference > 0 ? chalk.red(`+${difference}`) : chalk.green(difference);
-}
+    spinner.setSpinnerString(0);
+    spinner.start();
 
-function showMeasurementPerHour(measurements, quantity) {
-    let riverIndex = 0;
-    console.log('');
-
-    while (0 < quantity--) {
-        console.log(`${measurements[riverIndex].date.format("YYYY-MM-DD HH:mm")} - ${measurements[riverIndex].level} metros (${getLevelDifference(measurements[riverIndex + 4].level, measurements[riverIndex].level)})`);
-
-        riverIndex += 4;
-    }
-
-    console.log('');
+    return spinner;
 }
