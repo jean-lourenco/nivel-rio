@@ -4,7 +4,7 @@
 const meow = require('meow');
 const nivelRio = require('nivel-rio-lib');
 const main = require('./main.js');
-const Spinner = require('cli-spinner').Spinner;
+const spin = require('./spin.js');
 
 const cli = meow(`
     Utilização
@@ -33,7 +33,7 @@ const cli = meow(`
 });
 
 const flags = cli.flags;
-const spinner = startNewLoading();
+const spinner = spin.startNewSpinner();
 
 if (flags['recente']) {
     nivelRio
@@ -49,13 +49,4 @@ if (flags['recente']) {
             spinner.stop(true);
             main.showMeasurementPerHour(x, 1);
         });
-}
-
-function startNewLoading() {
-    const spinner = new Spinner("Carregando...");
-
-    spinner.setSpinnerString(0);
-    spinner.start();
-
-    return spinner;
 }
