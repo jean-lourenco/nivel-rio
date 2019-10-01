@@ -8,7 +8,7 @@
     "cli-spinner": "^0.2.6",
     "meow": "^3.7.0",
     "moment": "^2.18.1",
-    "nivel-rio-lib": "0.0.3"
+    "nivel-rio-lib": "0.0.4"
   },
   "bin": {
     "nivel-rio": "nivel-rio-cli.js"
@@ -28,7 +28,7 @@
   "author": {
     "name": "Jean Lourenço",
     "email": "jeancarlos.bnu@gmail.com",
-    "url": "jeanlourenco.com"
+    "url": "https://jeanlourenco.com"
   },
   "license": "MIT",
   "bugs": {

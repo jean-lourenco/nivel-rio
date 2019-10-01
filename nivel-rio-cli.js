@@ -12,6 +12,7 @@ const cli = meow(`
 
     Opções
         --recente, -r    lista as 10 medições mais recentes por hora
+        --cidade, c      cidade do nível do rio
 
     Exemplos
         $ nivel-rio
@@ -26,25 +27,39 @@ const cli = meow(`
             2017-08-08 11:00 - 0.43 metros (-0.06)
             2017-08-08 10:00 - 0.49 metros (-0.11)
 
+    Cidades Disponíveis
+        blumenau (padrão)
+        apiuna
+        beneditonovo
+        brusque
+        ibirama
+        ituporanga
+        riodooeste
+        riodoscedros
+        taio
+        timbo
+        vidalramos
 `, {
     alias: {
-        r: 'recente'
+        r: 'recente',
+        c: 'cidade'
     }
 });
 
 const flags = cli.flags;
 const spinner = spin.startNewSpinner();
+const cidade = flags['cidade'] || undefined;
 
 if (flags['recente']) {
     nivelRio
-        .getAllRiverLevelInfo()
+        .getAllRiverLevelInfo(cidade)
         .then((x) => {
             spinner.stop(true);
             main.showMeasurementPerHour(x, 10);
         });
 } else {
     nivelRio
-        .getAllRiverLevelInfo()
+        .getAllRiverLevelInfo(cidade)
         .then((x) => {
             spinner.stop(true);
             main.showMeasurementPerHour(x, 1);
